@@ -1,0 +1,85 @@
+@Metadata.layer: #CORE
+annotate entity ZCC_DM_ACTIVOS with
+{
+  @UI.hidden: true
+  AssetUUID;
+  
+  @EndUserText.label: 'Asset code'
+  @UI: {
+  lineItem: [{ position: 10 }], //Aparezca la columna
+  selectionField: [{ position: 10 }]  //Aparezca el filtro
+  }
+  AssetCode;
+  
+  @EndUserText.label: 'Asset Type'
+    @UI: {
+  lineItem: [{ position: 20 }],
+  selectionField: [{ position: 20 }]
+  }
+  AssetType;
+  
+  @EndUserText.label: 'Description'
+    @UI: {
+  lineItem: [{ position: 30 }]
+  }
+  Description;
+  
+  @EndUserText.label: 'Category'
+  @UI: {
+  lineItem: [{ position: 40 }]
+  }
+  Category;
+  
+  @EndUserText.label: 'Manufacturer'
+    @UI: {
+  lineItem: [{ position: 50 }]
+  }
+  Nanufacturer;
+  
+  @EndUserText.label: 'Model'
+    @UI: {
+  lineItem: [{ position: 60 }]
+  }
+  Model;
+  
+  @EndUserText.label: 'Serial Number'
+    @UI: {
+  lineItem: [{ position: 70 }]
+  }
+  SerialNumber;
+  
+  @EndUserText.label: 'Acquisition Date'
+    @UI: {
+  lineItem: [{ position: 80 }]
+  }
+  
+  AcquisitionDate;
+  @EndUserText.label: 'Purchase Cost'
+  PurchaseCost;
+  @EndUserText.label: 'Currency'
+  CurrencyCode;
+  @EndUserText.label: 'Location'
+  Location;
+  @EndUserText.label: 'Assigned User'
+  AssignedUser;
+  @EndUserText.label: 'Status'
+  Status;
+  @EndUserText.label: 'Warranty End Date'
+  WarrantyEndDate;
+  @EndUserText.label: 'Criticality'
+  Criticality;
+  @EndUserText.label: 'Last Maintance Date'
+  LastMaintenanceDate;
+  @EndUserText.label: 'Next Maintance Date'
+  NextMaintenanceDate;
+  //  CreatedBy;
+  //  CreatedAt;
+  //  LastChangedBy;
+  //  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //  /* Associations */
+  //  _asoaux1;
+  //  _asopadre;
+
+}

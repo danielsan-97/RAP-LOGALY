@@ -1,0 +1,5 @@
+CLASS z_cl_bp_i_dm_activos_r DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_dm_activos_r.
+ENDCLASS.
+
+CLASS z_cl_bp_i_dm_activos_r IMPLEMENTATION.
+ENDCLASS.

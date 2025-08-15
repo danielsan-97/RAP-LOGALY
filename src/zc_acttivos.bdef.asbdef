@@ -1,0 +1,18 @@
+interface;
+
+define behavior for ZC_ACTTIVOS alias activos_b
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _asopadre { create; }
+}
+
+define behavior for ZC_DM_PRIGRAMACION alias programacion_b
+{
+  use update;
+  use delete;
+
+  use association _asohija;
+}

@@ -1,0 +1,72 @@
+managed; //implementation in class zbp_i_dm_activos_r unique;
+strict ( 2 );
+
+define behavior for ZI_DM_ACTIVOS_R alias activos_b
+implementation in class z_cl_bp_i_dm_activos_r unique
+persistent table zdm_activos
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( numbering : managed, readonly ) AssetUUID; //el numero de este campo se genera de forma automatica
+  association _asopadre { create; }
+  mapping for zdm_activos
+    {
+       //el segundo es el de la tabla
+      AssetUUID           = asset_uuid;
+      AssetCode           = asset_code;
+      AssetType           = asset_type;
+      Description         = description;
+      Category            = category;
+      Nanufacturer        = nanufacturer;
+      Model               = model;
+      SerialNumber        = serial_number;
+      AcquisitionDate     = acquisition_date;
+      PurchaseCost        = purchase_cost;
+      CurrencyCode        = currency_code;
+      Location            = location;
+      AssignedUser        = assigned_user;
+      Status              = status;
+      WarrantyEndDate     = warranty_end_date;
+      Criticality         = criticality;
+      LastMaintenanceDate = last_maintenance_date;
+      NextMaintenanceDate = next_maintenance_date;
+      CreatedBy           = created_by;
+      CreatedAt           = created_at;
+      LastChangedBy       = last_changed_by;
+      LastChangedAt       = last_changed_at;
+      LocalLastChangedAt  = local_last_changed_at;
+    }
+}
+
+define behavior for ZI_DM_PROGRAMACION alias programacion_b
+implementation in class z_cl_bp_i_dm_programacion unique
+persistent table zdm_mantenimento
+lock dependent by _asohija
+authorization dependent by _asohija
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( numbering : managed, readonly ) MaintUUID;
+  field ( readonly ) AssetParentUUID;
+  association _asohija;
+  mapping for zdm_mantenimento
+    {
+      MaintUUID          = maint_uuid;
+      AssetParentUUID    = asset_parent_uuid;
+      MaintType          = maint_type;
+      Description        = description;
+      ScheduledDate      = scheduled_date;
+      CompletedDate      = completed_date;
+      Technician         = technician;
+      MaintStatus        = maint_status;
+      Cost               = cost;
+      Currency           = currency;
+      Notes              = notes;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}

@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for ZCC_DM_ACTIVOS alias activos
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _asopadre { create; }
+}
+
+define behavior for ZCC_MANTENIMIENTO alias matto
+{
+  use update;
+  use delete;
+
+  use association _asohija;
+}

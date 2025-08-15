@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+annotate entity ZCC_MANTENIMIENTO
+    with 
+{
+    @UI.hidden: true
+    MaintUUID;
+    @UI.hidden: true
+    AssetParentUUID;
+    @EndUserText.label: 'Maintenance Type'
+    MaintType;
+    @EndUserText.label: 'Descrition'
+    Description;
+    @EndUserText.label: 'Schedule Date'
+    ScheduledDate;
+    @EndUserText.label: 'Completed Date'
+    CompletedDate;
+    @EndUserText.label: 'Technician'
+    Technician;
+    @EndUserText.label: 'Maintenance Status'
+    MaintStatus;
+    @EndUserText.label: 'Cost'
+    Cost;
+    @EndUserText.label: 'Currency'
+    Currency;
+    @EndUserText.label: 'Notes'
+    Notes;
+    @UI.hidden: true
+    LocalLastChangedAt;
+//    /* Associations */
+//    _asohija;
+    
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition para activos'
+define service ZSD_DM_ACTIVOS {
+  expose ZCC_DM_ACTIVOS    as Activos;
+  expose ZCC_MANTENIMIENTO as Mantenimiento;
+}
